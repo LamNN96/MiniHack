@@ -1,30 +1,48 @@
 const router = require('express').Router();
 const questionController = require('./controller');
 
+
+let questionNo = 0;
 router.get('/', (req, res) => {
-    questionController.getRandomQuestion((question) => {
+    if(questionNo >= 6){
+        questionNo = 1;
+    }
+    else questionNo ++;
+    // questionController.getNextQuestion();
+    questionController.getQuestionById(questionNo,(err, question) => {
         console.log('question', question);
-        if (question._id == 2){
+        //question.type = 1 : 1 - 10
+        //question.type = 2 : 4 or 10
+        //question.type  = 3 : input answer
+        //question.type = 4 : 1 - 15
+        if (question.questionType == 1){
             res.render('game', {
                 questionNo: questionController.getCurrentQuestionNo(),
                 question: question,
                 score: questionController.getPlayerScore(),
-                question2: "hidden",
-                question6: "hidden"
+               type1 : "style=\"display: inline-block\""
             });
-        }else if (question._id == 6){
+        }else if (question.questionType == 2){
             res.render('game', {
                 questionNo: questionController.getCurrentQuestionNo(),
                 question: question,
                 score: questionController.getPlayerScore(),
+                type2 : "style=\"display: inline-block\""
             });
         }
-        else{
+        else if (question.questionType == 3){
             res.render('game', {
                 questionNo: questionController.getCurrentQuestionNo(),
                 question: question,
                 score: questionController.getPlayerScore(),
-                question6: "hidden"
+                type3 : "style=\"display: inline-block\""
+            });
+        } else {
+            res.render('game', {
+                questionNo: questionController.getCurrentQuestionNo(),
+                question: question,
+                score: questionController.getPlayerScore(),
+                type4 : "style=\"display: inline-block\""
             });
         }
     })

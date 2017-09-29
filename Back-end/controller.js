@@ -1,8 +1,8 @@
 const fs = require('fs');
 const questionModel = require('./questionSchema');
 let currentQuestionNo;
+// let questionNo = 0;
 let playerScore = 0;
-let playerQuestion = [];
 
 const getRandomQuestion = (callback) => {
     //console.log('callback ',callback);
@@ -27,6 +27,28 @@ const getRandomQuestion = (callback) => {
         );
     });
 };
+
+const getQuestionById = (id, callback) => {
+    console.log('id ' , id);
+    questionModel.findOne({_id: id}, (err, question) => {
+        if (err) {
+            console.log(err);
+            callback(err);
+        } else {
+            console.log('question get by id: ', question)
+            callback(null, question);
+        }
+    });
+};
+//
+// const getNextQuestion = (callback) => {
+//     console.log('play score',playerScore);
+//     if(questionNo > 5 && playerScore <= 0){
+//         //res.send('You lose!!!')
+//         questionNo = 1;
+//     } else questionNo++;
+//     console.log('questionNo', questionNo);
+// };
 const processAnswer = (answer) =>{
     console.log('answer:', answer);
     playerScore = parseInt(playerScore) + parseInt(answer);
@@ -39,10 +61,6 @@ const getPlayerScore = () =>{
     return playerScore;
 }
 
-const resetPlayerScore = () =>{
-    playerScore = 0;
-}
-
 const getCurrentQuestionNo = () => {
     return currentQuestionNo;
 }
@@ -52,5 +70,11 @@ module.exports = {
     processAnswer,
     getPlayerScore,
     getCurrentQuestionNo,
-    resetPlayerScore,
+  //  getNextQuestion,
+    getQuestionById
 };
+
+
+
+
+

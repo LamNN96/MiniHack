@@ -1,87 +1,77 @@
 <div class="container">
-  <h1>Điểm số: {{score}}/30</h1>
-  <div class="jumbotron">
-    <h1>{{{question.question}}}</h1>
-    <h2>Tôi chọn số</h2>
-    <div class="answerRow">
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="1"></input>
-      </form>
+    <h1>Điểm số: {{score}}/30</h1>
+    <div class="jumbotron">
+        <h2>{{{question.question}}}</h2>
+        <h2>Tôi chọn số</h2>
+        <!--form question type 1 : 1 - 10-->
+        <div class="answerForm" {{{type1}}} >
+            <form method="post" action="">
+                <input class="btn btn-primary" type="submit" name="submit" value="1"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="2"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="3"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="4"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="5"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="6"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="7"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="8"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="9"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="10"/>
+            </form>
+        </div>
+        <div class="answerForm" {{{type3}}}>
+            <form  method="post" action="">
+                <input type="number" name="submit">
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+        </div>
+        <div class="answerForm"  {{{type2}}}>
+            <form  method="post" action="">
+                <input class="btn btn-primary" type="submit" name="submit" value="4"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="10"/>
+            </form>
+        </div>
+        <div class="answerForm" {{{type4}}}>
+            <form  method="post" action="">
+                <input class="btn btn-primary" type="submit" name="submit" value="1"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="2"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="3"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="4"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="5"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="6"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="7"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="8"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="9"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="10"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="11"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="12"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="13"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="14"/>
+                <input class="btn btn-primary" type="submit" name="submit" value="15"/>
+            </form>
+        </div>
+        <div class="graph-1-container">
 
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="2"></input>
-      </form>
+        </div>
+        <div class="graph-2-container">
 
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="3"></input>
-      </form>
+        </div>
+        <div class="graph-3-container">
 
-      <form class="" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="4"></input>
-      </form>
+        </div>
+        <div class="graph-4-container">
 
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="5"></input>
-      </form>
+        </div>
+        <div class="graph-5-container">
 
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="6"></input>
-      </form>
+        </div>
+        <div class="graph-6-container">
 
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="7"></input>
-      </form>
-
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="8"></input>
-      </form>
-
-      <form class="{{question2}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="9"></input>
-      </form>
-
-      <form class="" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="10"></input>
-      </form>
-
-      <form class="{{question6}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="11"></input>
-      </form>
-
-      <form class="{{question6}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="12"></input>
-      </form>
-
-      <form class="{{question6}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="13"></input>
-      </form>
-
-      <form class="{{question6}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="14"></input>
-      </form>
-
-      <form class="{{question6}}" action="" method="post">
-        <input class="btn" type="submit" name="submit" value="15"></input>
-      </form>
+        </div>
     </div>
-
-  </div>
-  <div class="graph-1-container">
-
-  </div>
-  <div class="graph-2-container">
-
-  </div>
-  <div class="graph-3-container">
-
-  </div>
-  <div class="graph-4-container">
-
-  </div>
-  <div class="graph-5-container">
-
-  </div>
-  <div class="graph-6-container">
-
-  </div>
 </div>
+
+<style>
+    .answerForm{
+        display: none;
+    }
+</style>

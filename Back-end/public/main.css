@@ -1,45 +1,10 @@
-body{
-  color: white;
-  background: black;
-}
-
-form{
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
 input{
-  text-align: center;
+  margin: 10px;
 }
-
-.jumbotron h1{
-  font-size: 30px;
-}
-
-.jumbotron h2{
-  font-size: 20px;
-}
-
 .jumbotron{
-  background-color: rgb(56, 54, 53);
-  margin-top: 20px;
+  background-color: inherit;
 }
 
-.answerRow{
-  text-align: center;
-}
-
-.hidden{
+.answerForm{
   display: none;
-}
-
-.img-container{
-  text-align: center;
-}
-
-.btn{
-  width: 45px;
-  background: gray;
 }

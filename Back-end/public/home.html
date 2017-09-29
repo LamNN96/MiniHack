@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A funny prison game of death</title>
+    <link rel="shortcut icon" href="/boltlogo.png">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn1.kongregate.com/javascripts/kongregate_api.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="game/ajax.js"></script>
+    <script type="text/javascript" src="game/main.js"></script>
+</head>
+<body marginwidth="0" marginheight="0">
+<div id="main">
+    <span id="score">Score: <span id="score-number">15</span></span>
+    <div id="speaker0">
+        <span id="speech0">Here we go: Pick a number between 1 and 10, but you get that many points only if less than 10% of people picked that number too.</span>
+    </div>
+    <div id="speaker1">
+        <span id="speech1">My answer is </span>
+        <div id="selection">
+            <button class="answerButton " onclick="answer(4, 1)">1</button>
+            <button class="answerButton " onclick="answer(4, 2)">2</button>
+            <button class="answerButton " onclick="answer(4, 3)">3</button>
+            <button class="answerButton " onclick="answer(4, 4)">4</button>
+            <button class="answerButton " onclick="answer(4, 5)">5</button>
+            <button class="answerButton " onclick="answer(4, 6)">6</button>
+            <button class="answerButton " onclick="answer(4, 7)">7</button>
+            <button class="answerButton " onclick="answer(4, 8)">8</button>
+            <button class="answerButton " onclick="answer(4, 9)">9</button>
+            <button class="answerButton " onclick="answer(4, 10)">10</button>
+        </div>
+    </div>
+
+    <div id="mainScreen" style="background: url(&quot;pics/interrogation.png&quot;); opacity: 1;">
+    </div>
+    <div id="graphWrap">
+        <canvas class="graphcanvas " width="450" height="150"></canvas>
+        <canvas class="graphcanvas " width="450" height="150"></canvas>
+        <canvas class="graphcanvas " width="450" height="150"></canvas>
+    </div>
+
+</div>
+<button id="muteButton" onclick="mute()">Mute</button>
+<div class="eye" style="top: -500px;"></div>
+<div class="eye" style="top: 450px; height: 0px;"></div>
+</body>
+</html>
