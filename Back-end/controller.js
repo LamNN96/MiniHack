@@ -59,6 +59,10 @@ const processAnswer = (answer) =>{
 
 const getPlayerScore = () =>{
     return playerScore;
+};
+
+const resetPlayerScore = ()=>{
+    playerScore = 0;
 }
 
 const getCurrentQuestionNo = () => {
@@ -71,7 +75,8 @@ module.exports = {
     getPlayerScore,
     getCurrentQuestionNo,
   //  getNextQuestion,
-    getQuestionById
+    getQuestionById,
+    resetPlayerScore
 };
 
 
